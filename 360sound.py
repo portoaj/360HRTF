@@ -66,26 +66,4 @@ for chunk in tqdm.tqdm(range(num_chunks)):
         results = np.concatenate((results, result), axis=0)
 print(results.shape)
 
-#HRIR, HRIR_sr = sf.read(HRIR_FILE)
-#print('HRIR shape:', HRIR.shape, 'HRIR Sample Rate:', HRIR_sr)
-
-
-# Convolve audio with rightward HRIR
-#left_result = np.convolve(input_audio, HRIR[:, 0])
-#right_result = np.convolve(input_audio, HRIR[:, 1])
-#result = np.vstack([left_result, right_result]).transpose()
-
 sf.write(OUTPUT_FILE, results, HRIR_sr)
-
-    
-#import sounddevice as sd
-#sd.play(results, HRIR_sr, blocking=False, loop=False)
-
-#for chunk in range(num_chunks):
-    # Find appropriate HRIR for this chunk
- #   print(HRIR_FILES[chunk % len(HRIR_FILES)])
-  #  time.sleep(CHUNK_LENGTH/ 1000)
-#sd.stop()
-
-
-#print(results.shape)
