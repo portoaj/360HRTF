@@ -48,7 +48,6 @@ for chunk in tqdm.tqdm(range(num_chunks)):
 
     # Find HRIR azimuth angle
     azimuth = CHUNK_INDEX * 5
-    print(azimuth, HRIR_file, azimuth <= 180)
 
     # Load HRIR file
     HRIR, HRIR_sr = sf.read(HRIR_file)
