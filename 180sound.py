@@ -14,6 +14,7 @@ BUFFER_LENGTH = 11025 # Number of samples in buffer
 
 # Get all HRIR filepaths
 HRIR_FILES = [file for file in os.listdir(HRIR_FOLDER)]
+HRIR_FILES.sort()
 
 # Load input audio file
 input_audio, input_audio_sr = sf.read(INPUT_FILE)
